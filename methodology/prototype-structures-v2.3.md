@@ -2,7 +2,7 @@
 
 **Статус:** нормативная спецификация протоструктур и методики исследования.
 
-**Версия:** v2.2 — согласование invariants, lifecycle, audit trail и Research Pass outputs.
+**Версия:** v2.3 — согласование invariants, lifecycle, audit trail и Research Pass outputs.
 
 ## 1. Назначение
 
@@ -2446,8 +2446,8 @@ Human Architectural Decision
 ```json
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "semantic-graph-prototype-structures-v2.2.schema.json",
-  "title": "Semantic Graph Prototype Structures v2.2",
+  "$id": "semantic-graph-prototype-structures-v2.3.schema.json",
+  "title": "Semantic Graph Prototype Structures v2.3",
   "type": "object",
   "required": [
     "schema_version",

@@ -10,6 +10,30 @@
 
 ---
 
+## 0. Что считать актуальным
+
+```text
+Current normative methodology:
+methodology/research-methodology-v2.3.md
+
+Current structural prototype:
+methodology/prototype-structures-v2.3.md
+
+Current cumulative research state:
+current-research-summary.md
+
+Historical research summary:
+research-summary.md
+```
+
+- [`methodology/research-methodology-v2.3.md`](methodology/research-methodology-v2.3.md)
+- [`methodology/prototype-structures-v2.3.md`](methodology/prototype-structures-v2.3.md)
+- [`current-research-summary.md`](current-research-summary.md)
+- [`research-summary.md`](research-summary.md) — `STATUS: HISTORICAL`, не является
+  нормативным описанием текущей версии v2.3
+
+---
+
 ## 1. Что здесь лежит
 
 Корпус состоит из четырёх слоёв. Они читаются в разном порядке и решают разные задачи.
@@ -20,7 +44,8 @@
 | [`mcr/`](mcr/) | Язык | Model Change Records — эксперименты над самим языком графа. Каждый MCR: вопрос → эксперимент → результат → (не)изменение языка. |
 | [`research-passes/`](research-passes/) | Факты | RP-01…RP-37 — проходы по реальному коду. Восстановление authentication, authorization, ролевой модели, location-пайплайна с привязкой к исходникам. |
 | [`experiments/`](experiments/) | Проверки | Кристаллизации, rule scans, prevalence check, историческая реконструкция — разовые проверки гипотез, не входящие в нумерованные цепочки. |
-| [`research-summary.md`](research-summary.md) | Итог | Резюме: что установлено, что осталось открытым. **Точка входа, если читаете корпус впервые.** |
+| [`current-research-summary.md`](current-research-summary.md) | Итог | Текущее кумулятивное состояние исследования. **Точка входа, если читаете корпус впервые.** |
+| [`research-summary.md`](research-summary.md) | История | Резюме ранней стадии: что было установлено, что осталось открытым. `STATUS: HISTORICAL`. |
 | [`source-docx/`](source-docx/) | Исходники | Оригиналы в `.docx`, из которых выросла часть методологии. Не редактируются. |
 
 Полный реестр всех документов — со статусами, версиями и соответствием исходным именам
@@ -33,7 +58,7 @@
 **Если нужно понять результат:**
 
 ```
-research-summary.md
+current-research-summary.md
     → methodology/research-methodology-v2.3.md   (как получены факты)
     → research-passes/rp-37-authentication-credential-value-flow-v0.4.md  (CONFIRMED)
 ```
@@ -62,7 +87,18 @@ methodology/prototype-structures-v2.3.md
 
 ## 3. Словарь статусов
 
-Статус документа стоит в его шапке. Смешивать уровни нельзя — это отдельное правило методологии.
+Нормативное разделение — [`research-methodology-v2.3.md`, раздел 9.1](methodology/research-methodology-v2.3.md):
+существует три независимых набора статусов, и смешивать их нельзя.
+
+```text
+Claim Confidence    CONFIRMED / INFERRED / UNKNOWN
+Research Result     CONFIRMED / REJECTED / SOURCE_GAP
+Document Status     PROVISIONAL / COMPLETED / RECONCILIATION / HISTORICAL
+```
+
+Ниже — словарь значений, фактически встречающихся в шапках документов корпуса. Часть из
+них смешивает уровни: корпус собирался до введения раздела 9.1, ретроспективная
+нормализация старых проходов в этот cleanup не входила.
 
 | Статус | Значение |
 |---|---|
@@ -127,10 +163,11 @@ sources: [taxi-master.zip, archive_17012026_1259_clear.zip]
 - **Два тяжёлых файла.** `rp-08` и `rp-09` весят по ~1.2 МБ: внутри сырые дампы
   `taxi/cache/data.json` одной строкой на 400К символов. Формально это provenance,
   практически — читать их в браузере GitHub бесполезно.
-- **В документах есть живые значения из прода.** RP-33, RP-35, RP-37 цитируют фронтенд
-  такси вместе с API-ключом картографического сервиса. Значения оставлены нетронутыми
-  намеренно — иначе ломается доказательность цитаты. Ключ стоит ротировать на стороне
-  сервиса; репозиторий приватный.
+- **Цитаты из прода санитизированы.** RP-33, RP-35, RP-37 цитируют фронтенд такси вместе
+  с API-ключом картографического сервиса. Репозиторий публичный, поэтому значение ключа
+  заменено на `<REDACTED>` с пометкой `[REDACTED DURING PUBLIC REPOSITORY SANITIZATION]`;
+  имя файла, номера строк и остальной verbatim-контекст цитаты сохранены. Credential
+  принадлежит владельцу исходной системы — ротация/отзыв выполняются на его стороне.
 - **MCR-06 отсутствует.** Пропуск в нумерации есть в исходном корпусе; документ либо не
   создавался, либо не передан.
 - **Исходные имена файлов сохранены** в [`INDEX.md`](INDEX.md) — сверка с тем, что
@@ -140,10 +177,16 @@ sources: [taxi-master.zip, archive_17012026_1259_clear.zip]
 
 ## 6. Состояние
 
-Корпус собран из выгрузки, полученной **17.08.2026** (63 `.md` + 2 `.docx`), и с тех пор
-не дополнялся. Содержимое документов не редактировалось: изменены только имена файлов и
-раскладка по каталогам. Единственные добавленные файлы — `README.md`, `INDEX.md` и
-`methodology/prototype-structures-v1-ru.md` (конвертация `.docx` в markdown).
+Корпус собран из выгрузки, полученной **17.08.2026** (63 `.md` + 2 `.docx`), и новыми
+исследованиями с тех пор не дополнялся. Добавленные файлы — `README.md`, `INDEX.md`,
+`current-research-summary.md` и `methodology/prototype-structures-v1-ru.md` (конвертация
+`.docx` в markdown).
+
+Содержимое исходных документов правилось только в рамках консолидации v2.3:
+санитизация credential в RP-33/35/37, приведение версии `prototype-structures-v2.3` к
+`v2.3`, нормативное разделение трёх наборов статусов и lifecycle Semantic Synthesis в
+`research-methodology-v2.3`, пометка `research-summary.md` как `HISTORICAL`. Новая версия
+методологии при этом не создавалась: текущая остаётся **v2.3**.
 
 Открытые вопросы исследования (`H-D`, `OQ-001`, `OQ-002`, незавершённая ветка `R-2`)
 перечислены в [`research-summary.md`](research-summary.md), раздел 5.

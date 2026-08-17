@@ -3624,6 +3624,13 @@ authenticated User/context
 298:         start: convertPoint(from),
 ```
 
+> `[REDACTED DURING PUBLIC REPOSITORY SANITIZATION]`
+>
+> В строке 288 исходного файла `src/API/index.ts` находился реальный
+> OpenRouteService API key. Значение заменено на `<REDACTED>`; имя файла,
+> номера строк и остальной verbatim-контекст цитаты сохранены без изменений.
+> Credential принадлежит владельцу исходной системы; ротация/отзыв — на его стороне.
+
 ### `src/API/index.ts:297`
 ```text
 291:   const convertPoint = (point: IAddressPoint) => `${point.longitude},${point.latitude}`

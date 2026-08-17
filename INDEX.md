@@ -14,9 +14,10 @@
 
 ## Итог
 
-| Файл | Что | Исходное имя |
-|---|---|---|
-| [`research-summary.md`](research-summary.md) | Резюме всего исследования: язык, дисциплина процесса, завершённые MCR, открытые вопросы, архитектура Semantic Graph Builder | `Semantic_Graph_Research_Summary.md` |
+| Файл | Статус | Что | Исходное имя |
+|---|---|---|---|
+| [`current-research-summary.md`](current-research-summary.md) | ← актуальная | Текущее кумулятивное состояние: нормативные документы v2.3, состав корпуса, подтверждённые результаты | *(добавлен при консолидации)* |
+| [`research-summary.md`](research-summary.md) | **`HISTORICAL`** | Резюме ранней стадии: язык, дисциплина процесса, завершённые MCR, открытые вопросы, архитектура Semantic Graph Builder. Не является нормативным описанием v2.3 | `Semantic_Graph_Research_Summary.md` |
 
 ---
 
@@ -119,13 +120,13 @@
 |---|---|---|---|
 | [`rp-31-taxi-frontend-authentication-trace-v0.1.md`](research-passes/rp-31-taxi-frontend-authentication-trace-v0.1.md) | `PROVISIONAL / EVIDENCE-GROUNDED` | Аутентификация на фронте | `Backend_Semantic_Graph_Research_Pass_31_Taxi_Frontend_Authentication.md` |
 | [`rp-32-taxi-frontend-auth-api-state-v0.1.md`](research-passes/rp-32-taxi-frontend-auth-api-state-v0.1.md) | `EVIDENCE-GROUNDED / PROVISIONAL` | API → состояние | `Backend_Semantic_Graph_Research_Pass_32_Taxi_Frontend_Auth_API_State.md` |
-| [`rp-33-taxi-frontend-auth-concrete-flow-v0.1.md`](research-passes/rp-33-taxi-frontend-auth-concrete-flow-v0.1.md) | `EVIDENCE-GROUNDED / PROVISIONAL` | Конкретный flow. **Содержит живой API-ключ из фронтенда** | `Backend_Semantic_Graph_Research_Pass_33_Taxi_Frontend_Auth_Concrete.md` |
+| [`rp-33-taxi-frontend-auth-concrete-flow-v0.1.md`](research-passes/rp-33-taxi-frontend-auth-concrete-flow-v0.1.md) | `EVIDENCE-GROUNDED / PROVISIONAL` | Конкретный flow. **API-ключ из фронтенда санитизирован** (`<REDACTED>`) | `Backend_Semantic_Graph_Research_Pass_33_Taxi_Frontend_Auth_Concrete.md` |
 | [`rp-34-taxi-frontend-login-endpoint-v0.1.md`](research-passes/rp-34-taxi-frontend-login-endpoint-v0.1.md) | `EVIDENCE-GROUNDED / PROVISIONAL` | Login endpoint | `Backend_Semantic_Graph_Research_Pass_34_Taxi_Frontend_Login_Endpoint.md` |
-| [`rp-35-taxi-auth-frontend-backend-trace-v0.2.md`](research-passes/rp-35-taxi-auth-frontend-backend-trace-v0.2.md) | `EVIDENCE-GROUNDED / PROVISIONAL` | Фронт ↔ Core Backend, v0.2. **Содержит живой API-ключ** | `Backend_Semantic_Graph_Research_Pass_35_Taxi_Auth_Frontend_Backend.md` |
+| [`rp-35-taxi-auth-frontend-backend-trace-v0.2.md`](research-passes/rp-35-taxi-auth-frontend-backend-trace-v0.2.md) | `EVIDENCE-GROUNDED / PROVISIONAL` | Фронт ↔ Core Backend, v0.2. **API-ключ санитизирован** (`<REDACTED>`) | `Backend_Semantic_Graph_Research_Pass_35_Taxi_Auth_Frontend_Backend.md` |
 | [`rp-36-taxi-auth-exact-endpoint-match-v0.1.md`](research-passes/rp-36-taxi-auth-exact-endpoint-match-v0.1.md) | `EVIDENCE-GROUNDED / PROVISIONAL` | Точное сопоставление route | `Backend_Semantic_Graph_Research_Pass_36_Taxi_Auth_Exact_Endpoint.md` |
 | [`rp-37-authentication-credential-value-flow-v0.4.md`](research-passes/rp-37-authentication-credential-value-flow-v0.4.md) | **`CONFIRMED`** ← актуальная | Value-flow credentials, v0.4. **В выгрузке лежал как `(2)` — самый свежий документ корпуса с самым невнятным именем** | `Backend_Semantic_Graph_Research_Pass_37_Authentication_Credential (2).md` |
-| [`rp-37-authentication-credential-value-flow-v0.3.md`](research-passes/rp-37-authentication-credential-value-flow-v0.3.md) | `EVIDENCE-GROUNDED / RECONCILIATION` | Предыдущая версия. **Содержит живой API-ключ** | `Backend_Semantic_Graph_Research_Pass_37_Authentication_Credential.md` |
-| [`rp-37-authentication-reconciliation-v0.1.md`](research-passes/rp-37-authentication-reconciliation-v0.1.md) | `EVIDENCE-GROUNDED / RECONCILIATION` | Сведение расхождений (10581 строка). **Содержит живой API-ключ** | `Backend_Semantic_Graph_Research_Pass_37_Authentication_Reconciliation.md` |
+| [`rp-37-authentication-credential-value-flow-v0.3.md`](research-passes/rp-37-authentication-credential-value-flow-v0.3.md) | `EVIDENCE-GROUNDED / RECONCILIATION` | Предыдущая версия. **API-ключ санитизирован** (`<REDACTED>`) | `Backend_Semantic_Graph_Research_Pass_37_Authentication_Credential.md` |
+| [`rp-37-authentication-reconciliation-v0.1.md`](research-passes/rp-37-authentication-reconciliation-v0.1.md) | `EVIDENCE-GROUNDED / RECONCILIATION` | Сведение расхождений (10581 строка). **API-ключ санитизирован** (`<REDACTED>`) | `Backend_Semantic_Graph_Research_Pass_37_Authentication_Reconciliation.md` |
 
 ---
 
